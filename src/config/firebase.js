@@ -14,7 +14,6 @@ import 'firebase/firestore'
     measurementId: "G-HM2C4G9XMF"
     };
   // Initialize Firebase
-    const fb = firebase.initializeApp(firebaseConfig);
-    /*firebase.analytics();*/
-    
-    export const db = fb.firestore();
+  let fireDB=firebase.initializeApp(firebaseConfig);
+
+  export default fireDB.database().ref();
