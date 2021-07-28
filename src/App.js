@@ -1,15 +1,29 @@
-
+import React from 'react';
 import './App.css';
-import Links  from './components/Links';
-import LinkForm from './components/LinkForm';
+// import {
+//    useUser
+// } from 'reactfire'
+// import {
+//   useFirebaseApp
+// } from 'reactfire'
+import Auth from '../src/components/Auth'
+
 
 function App() {
-  return (
-    <>
+  
+ 
 
-    </>
+
+  return (
+    <div className="App">
+     <p>Usuario </p>
+      <Auth />
+    </div>
   );
 }
 
 export default App;
+
+
+
 
