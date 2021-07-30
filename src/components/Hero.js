@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
+import  firebase from '../firebase-config';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 
-const Hero = (props) => {
 
-    const { handleLogout } = props;
+Class Hero extends Component {
+
+
+
+
+    /*const { handleLogout } = props;
 
     return(
         <section className="hero">
@@ -10,8 +17,13 @@ const Hero = (props) => {
                 <h2>Welcome</h2>
                 <button onClick={handleLogout}>Salir</button>
             </nav>
-        </section>
-    )
+    
+
+        </section> 
+
+    )*/
+
+
 }
 
 export default Hero;

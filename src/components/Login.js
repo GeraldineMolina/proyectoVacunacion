@@ -10,8 +10,8 @@ const Login = (props) => {
         handleSignup, 
         hasAccount, 
         setHasAccount, 
-        emailError, 
-        PasswordError 
+        emailError,     
+        PasswordError           
     } = props;
 
     return(
@@ -30,10 +30,10 @@ const Login = (props) => {
                                 <button onClick={handleLogin}>Iniciar Sesión</button>
                                 <p>
                                 ¿No tienes una cuenta?
-                                    <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
+                                 <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
                                 </p>
                             </>
-
+                    
                         ) : (
                             <>
                             <button onClick={handleSignup}>Registrarse</button>
