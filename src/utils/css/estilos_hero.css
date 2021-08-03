@@ -98,6 +98,11 @@
 
   }
 
+  .botonBuscar:-ms-input-placeholder {
+    color: #F4F4F4;
+
+  }
+
   /*editar*/ 
 
   .editar{
