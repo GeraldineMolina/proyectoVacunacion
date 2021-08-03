@@ -170,28 +170,3 @@ input::placeholder {
   color: red;
   font-size: 16px;
 }
-
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(180deg, rgba(243, 157, 91, 0.86) 7.34%, rgba(114, 116, 116, 0.86) 90.16%);
-}
-
-.hero nav {
-  background: #603bbb;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero nav h2 {
-  color: #fff;
-}
-
-.hero nav button {
-  width: 86px;
-  padding: 8px 0;
-  background: #3a2b58;
-}

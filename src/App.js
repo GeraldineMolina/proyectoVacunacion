@@ -3,7 +3,6 @@ import fire from '../src/firebase-config'
 import Login from '../src/components/Login'
 import Hero from '../src/components/Hero'
 import './App.css';
-import 'semantic-ui-css/semantic.min.css'
 
 
 
