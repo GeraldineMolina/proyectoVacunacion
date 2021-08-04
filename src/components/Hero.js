@@ -19,14 +19,26 @@ const useStyles=makeStyles((theme)=>({
     modal:{
         position: 'absolute',
         width: 600,
-        background: '#D2A35C',
+        background: '#F5F5F5',
         border: "5px",
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-    }
+    },
+    modalEditar:{
+        position: 'absolute',
+        width: 600,
+        background: '#F5F5F5',
+        border: "5px",
+        boxShadow: theme.shadows[5],
+        padding: "16px 32px 24px",
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+    },
+
 }));
 
 /*--------------------------------------*/
@@ -54,8 +66,9 @@ const Hero = (props) => {
     
     const bodymodal=(
         <div className={styles.modal}> 
-            <div align="center"> 
-                <h2> Agregar Registro </h2> 
+        
+            <div className={styles.contenedorTitulo} align="center"> 
+                <h2 className="tituloModal1"> Agregar Registro </h2> 
             </div>
 
             <TextField label="Id" className={styles.TextField   }> </TextField>
@@ -68,9 +81,9 @@ const Hero = (props) => {
             <br />
             <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
             <br /> <br />
-            <div> 
-                <button color="primary"> Guardar </button>
-                <button  onClick={()=>abrirCerrarModal()}> Cancelar </button>
+            <div  className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
             </div>
         </div>
     )
@@ -78,7 +91,7 @@ const Hero = (props) => {
     const [modalEditar, setModalEditar]=useState(false);
 
     const abrirCerrarModalEditar =()=>{
-        setModal(!modalEditar);
+        setModalEditar(!modalEditar);
     }
     
     const bodyEditar=(
@@ -97,9 +110,9 @@ const Hero = (props) => {
             <br />
             <TextField label="Cafam" className={styles.TextField   }> </TextField>
             <br /> <br />
-            <div> 
-                <button color="primary"> Guardar </button>
-                <button  onClick={()=>abrirCerrarModalEditar()}> Cancelar </button>
+            <div className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button  className="botonCancelar" onClick={()=>abrirCerrarModalEditar()}> Cancelar </button>
             </div>
         </div>
     )
