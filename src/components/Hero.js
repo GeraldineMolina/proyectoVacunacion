@@ -20,25 +20,43 @@ const useStyles=makeStyles((theme)=>({
         position: 'absolute',
         width: 600,
         background: '#F5F5F5',
+<<<<<<< HEAD
+=======
+        border: "5px",
+>>>>>>> origin/Gerald
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
+<<<<<<< HEAD
         borderRadius:"16px",
     },
     modalEditar:{
         position: 'absolute',
         width: 600,
         background: '#F5F5F5',
+=======
+    },
+    modalDos:{
+        position: 'relative',
+        width: 600,
+        background: '#F5F5F5',
+        border: "5px",
+>>>>>>> origin/Gerald
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
+<<<<<<< HEAD
         borderRadius:"16px",
 
     }
+=======
+    },
+
+>>>>>>> origin/Gerald
 }));
 
 /*--------------------------------------*/
@@ -68,7 +86,12 @@ const Hero = (props) => {
     
     const bodymodal=(
         <div className={styles.modal}> 
+<<<<<<< HEAD
             <div className="contenedorTitulo" align="center"> 
+=======
+        
+            <div className={styles.contenedorTitulo} align="center"> 
+>>>>>>> origin/Gerald
                 <h2 className="tituloModal1"> Agregar Registro </h2> 
             </div>
 
@@ -82,38 +105,57 @@ const Hero = (props) => {
             <br />
             <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
             <br /> <br />
+<<<<<<< HEAD
             <div> 
                 <button className="botonGuardar"> Guardar </button>
                 <button  onClick={()=>abrirCerrarModal()}> Cancelar </button>
+=======
+            <div  className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
+>>>>>>> origin/Gerald
             </div>
         </div>
     )
     /*--------------modal2--------*/
+<<<<<<< HEAD
     const [modalEditar, setModalEditar]=useState(false);
 
     const abrirCerrarModalEditar =()=>{
         setModalEditar(!modalEditar);
+=======
+    const [modalDos, setModalDos]=useState(false);
+    const abrirCerrarModalDos =()=>{
+        setModalDos(!modalDos);
+>>>>>>> origin/Gerald
     }
     
-    const bodyEditar=(
-        <div className={styles.modalEditar}> 
-            <div align="center"> 
-                <h2> Editar Registro </h2> 
+    const bodymodaldos=(
+        <div className={styles.modal}> 
+        
+            <div className={styles.contenedorTitulo} align="center"> 
+                <h2 className="tituloModal1"> Editar Registro </h2> 
             </div>
 
-            <TextField label="1000728673" className={styles.TextField   }> </TextField>
+            <TextField label="Id" className={styles.TextField   }> </TextField>
             <br />
-            <TextField label="Geraldine Molina" className={styles.TextField   }> </TextField>
+            <TextField label="Nombre" className={styles.TextField   }> </TextField>
             <br />
-            <TextField label="Tos nauseas" className={styles.TextField   }> </TextField>
+            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
             <br />
-            <TextField label="Ninguna" className={styles.TextField   }> </TextField>
+            <TextField label="Dosis" className={styles.TextField   }> </TextField>
             <br />
-            <TextField label="Cafam" className={styles.TextField   }> </TextField>
+            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
             <br /> <br />
+<<<<<<< HEAD
             <div> 
                 <button className="botonGuardar"> Guardar </button>
                 <button  onClick={()=>abrirCerrarModalEditar()}> Cancelar </button>
+=======
+            <div  className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
+>>>>>>> origin/Gerald
             </div>
         </div>
     )
@@ -166,9 +208,9 @@ const Hero = (props) => {
                                                 <TableCell> {celda.sintomalogia} </TableCell>
                                                 <TableCell> {celda.dosis} </TableCell>
                                                 <TableCell> {celda.laboratorio} </TableCell>
-                                                <TableCell> <img  className="editar" src={editar} onClick={()=>abrirCerrarModalEditar()} /></TableCell>
-                                                <Modal open={modalEditar} onClose={abrirCerrarModalEditar}>
-                                                    {bodyEditar}
+                                                <TableCell> <img  className="editar" src={editar}  onClick={()=>abrirCerrarModalDos()} /></TableCell>
+                                                <Modal open={modalDos} onClose={abrirCerrarModalDos}>
+                                                    {bodymodaldos}
                                                 </Modal>
                                             </TableRow>
                                         
@@ -177,24 +219,11 @@ const Hero = (props) => {
                                 </Table>
                             </TableContainer>
                         </div>
-
-
-
                     </div>
                 </section>
             </div> 
-        </>
-        
+        </> 
     );
-
-    
-
-
-
-
-
-
-
 }
 
 export default Hero;
