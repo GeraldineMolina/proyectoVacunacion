@@ -1,0 +1,155 @@
+
+
+/*---- estilos general----*/
+.hero {
+    width: 100%;
+    height: 100% ;
+    background: linear-gradient(180deg, rgba(243, 157, 91, 0.86) 7.34%, rgba(114, 116, 116, 0.86) 90.16%);
+  }
+  
+  .hero2 nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  /*----------cabecera---------*/
+
+  .botonVolver{
+    width: 24%;
+    padding: 5px;
+    background: #05989C;
+    color: #fff;
+    border-radius: 8px;
+
+}
+
+.botonVolver:hover{
+    background: #17cbd1;
+
+
+}
+
+.logoForja{
+    width: 12%;
+}
+
+  /*--------Titulo crud-------*/
+
+  .tituloCrud{
+      font-size: 30px;
+      margin-left: 30%;
+      font-weight: bold;
+      color: #4A4A4A;
+      padding: 1px;
+      text-shadow: 1px 1px 1px;
+    
+    }
+
+  /*-------------botones debajo del titulo-------------*/
+ /*contenedor*/ 
+.contenedor_botones{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+/*agregar*/
+.agregar{
+    width: 14%;
+    padding: 3px;
+    border-radius: 8px;
+    background-color: #358608;
+}
+
+.agregar:hover{
+    background-color: #54b91d;
+}
+
+/*buscar*/ 
+
+.bucarcon {
+    display: flex;
+    color: #4A4A4A;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.botonBuscar{
+    margin: 1px;
+    background-color: #AE766A;
+    border-radius: 5px;   
+    border: none; 
+    height: 25px;    
+}
+
+.botonBuscar::placeholder {
+    color: #F4F4F4;
+    font-style: italic;
+    margin: 2px;
+    border: none;
+    font-size: 15px;
+    padding-left: 5px;
+
+  }
+
+  .botonBuscar:-ms-input-placeholder {
+    color: #F4F4F4;
+
+  }
+
+  /*editar*/ 
+
+  .editar{
+      width: 35px;
+  }
+
+  .editar:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px 3px;
+    border-radius: 8px;
+}
+  /*-----------Tabla---------*/ 
+
+.contenedor_tabla{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%;
+}
+
+.tablaContenedor{
+    background-color: #fff;
+    border-radius: 40px;
+    
+  }
+  .tabla{
+
+  }
+/*cabecera*/
+  .tablacabecera {
+      background-color: #F1781C;
+      
+  }
+
+  .row{
+    color: #FFF6F4;
+    padding: 6px;
+}
+  .row1{
+      color: #FFF6F4;
+      padding: 1px;
+  }
+
+/*cuerpo*/
+  .tablaRow{
+    font-size: 15px;
+  }
+
+  .cuerpoTabla{
+
+  }

@@ -32,6 +32,9 @@ const Login = (props) => {
                     <p className="errorMsg">{emailError}</p>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/Gerald
                 <label>Password</label>
                 <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                 <p className="errorMsg">{PasswordError}</p>
@@ -53,6 +56,7 @@ const Login = (props) => {
                         )}
                     </div>
             </div>
+<<<<<<< HEAD
 =======
                     
                     <input type="password" placeholder="Contraseña" required value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -83,6 +87,8 @@ const Login = (props) => {
                         </div>
                 </div>
 >>>>>>> cd790aa068bfafd285d8fccd7efb5e3a13df0757
+=======
+>>>>>>> origin/Gerald
 
             </section>
         </div>
