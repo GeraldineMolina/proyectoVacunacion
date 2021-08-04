@@ -19,13 +19,25 @@ const useStyles=makeStyles((theme)=>({
     modal:{
         position: 'absolute',
         width: 600,
-        background: '#D2A35C',
-        border: "5px",
+        background: '#F5F5F5',
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
+        borderRadius:"16px",
+    },
+    modalEditar:{
+        position: 'absolute',
+        width: 600,
+        background: '#F5F5F5',
+        boxShadow: theme.shadows[5],
+        padding: "16px 32px 24px",
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        borderRadius:"16px",
+
     }
 }));
 
@@ -46,6 +58,8 @@ const Hero = (props) => {
     const { handleLogout } = props;
     
     /*----------Modales---------*/
+
+    /*-----------modal1------------*/
     const styles = useStyles();
     const [modal, setModal]=useState(false);
     const abrirCerrarModal =()=>{
@@ -54,8 +68,8 @@ const Hero = (props) => {
     
     const bodymodal=(
         <div className={styles.modal}> 
-            <div align="center"> 
-                <h2> Agregar Registro </h2> 
+            <div className="contenedorTitulo" align="center"> 
+                <h2 className="tituloModal1"> Agregar Registro </h2> 
             </div>
 
             <TextField label="Id" className={styles.TextField   }> </TextField>
@@ -69,7 +83,7 @@ const Hero = (props) => {
             <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
             <br /> <br />
             <div> 
-                <button color="primary"> Guardar </button>
+                <button className="botonGuardar"> Guardar </button>
                 <button  onClick={()=>abrirCerrarModal()}> Cancelar </button>
             </div>
         </div>
@@ -78,7 +92,7 @@ const Hero = (props) => {
     const [modalEditar, setModalEditar]=useState(false);
 
     const abrirCerrarModalEditar =()=>{
-        setModal(!modalEditar);
+        setModalEditar(!modalEditar);
     }
     
     const bodyEditar=(
@@ -98,7 +112,7 @@ const Hero = (props) => {
             <TextField label="Cafam" className={styles.TextField   }> </TextField>
             <br /> <br />
             <div> 
-                <button color="primary"> Guardar </button>
+                <button className="botonGuardar"> Guardar </button>
                 <button  onClick={()=>abrirCerrarModalEditar()}> Cancelar </button>
             </div>
         </div>

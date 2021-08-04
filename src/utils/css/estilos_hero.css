@@ -153,3 +153,27 @@
   .cuerpoTabla{
 
   }
+
+  /*---------------modals-------------*/
+
+.botonGuardar{
+  background-color: #BBAC21;
+}
+
+.botonGuardar:hover{
+  background-color: #DFCD2E;
+  cursor: pointer;
+}
+
+.contenedorTitulo{
+    background-color: #F1781C;  
+    width: 600px;
+    mar
+}
+  /*-------modal 1 ----------------------*/
+
+  .tituloModal1{
+
+    width:100%
+  }
+

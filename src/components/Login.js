@@ -31,10 +31,7 @@ const Login = (props) => {
                     <input type="text" placeholder="Usuario" autoFocus required value={email} onChange={e => setEmail(e.target.value)} />
                     <p className="errorMsg">{emailError}</p>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/Gerald
+
                 <label>Password</label>
                 <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                 <p className="errorMsg">{PasswordError}</p>
@@ -56,39 +53,7 @@ const Login = (props) => {
                         )}
                     </div>
             </div>
-<<<<<<< HEAD
-=======
-                    
-                    <input type="password" placeholder="Contraseña" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <p className="errorMsg">{PasswordError}</p>
-                        <div className="btnContainer">
-                            {hasAccount ? (
-                                <>
-                                <button onClick={handleSignup}>Registrarse</button>
-                                <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p>
-                                    {/* <button onClick={handleLogin}>Iniciar Sesión</button>
-                                    <p>
-                                    ¿No tienes una cuenta?
-                                        <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
-                                    </p> */}
-                                </>
 
-                            ) : (
-                                <>
-                                <button type="button" onClick={handleLogin}>Continuar</button>
-                                    <p>
-                                    
-                                        <span onClick={() => setHasAccount(!hasAccount)}></span>
-                                    </p>
-                                {/* <button onClick={handleSignup}>Registrarse</button>
-                                <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p> */}
-                                </>
-                            )}
-                        </div>
-                </div>
->>>>>>> cd790aa068bfafd285d8fccd7efb5e3a13df0757
-=======
->>>>>>> origin/Gerald
 
             </section>
         </div>
