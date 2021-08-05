@@ -3,16 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/storage": "^5.11.0",
+    "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.2",
     "bootswatch": "^5.0.2",
+<<<<<<< HEAD
+=======
+    "firebase": "^9.0.0-beta.6",
+>>>>>>> 2edb7bb621230df0415a194c0bd315c22e23e95b
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "reactfire": "^3.0.0-rc.0",
     "reactstrap": "^8.9.0",
     "styled-components": "^5.3.0",
@@ -41,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "graphql-code-generator": "^0.18.2"
   }
 }

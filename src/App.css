@@ -5,20 +5,65 @@
   font-family: "Nunito", sans-serif;
 }
 
+@font-face{
+  font-family: "Roboto";
+  src:url(../src/utils/fonts/Roboto-Medium.woff);
+}
+
+@font-face{
+  font-family: "Poppins";
+  src:url(../src/utils/fonts/Poppins-ExtraBold.woff);
+}
+
 button {
   border: none;
   outline: none;
-  width: 100%;
+  width: 50%;
   padding: 15px 0;
   color: #fff;
-  font-size: 16px;
+  font-family: "Poppins";
+  font-size: 20px;
   letter-spacing: 1px;
   background: #05989C;
   border-radius: 15px;
   cursor: pointer;
 }
 
+.btnContainer button:hover{
+  background: #009c8c;
+}
+
+input::placeholder {
+  font-family: "Poppins";
+  color: #828485;
+  font-size: 18px;
+}
+
+.Title {
+  margin-top:105px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 30px;
+  color: #4A4A4A;
+  font-family: "Poppins";
+}
+
+.btnContainer{
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 70px;
+}
+
 .login {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.Login2 {
   width: 100%;
   min-height: 100vh;
   padding: 0 20px;
@@ -27,21 +72,51 @@ button {
   background-size: 100%;
   background-position: center;
   display: flex;
+  justify-content: flex-end;
 }
 
-.login .loginContainer {
+.loginContainer {
   padding: 60px;
   margin: auto;
   width: 100%;
-  max-width: 520px;
-  min-height: 600px;
+  max-width: 420px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(138.39deg, rgba(243, 157, 91, 0.86) 20.89%, rgba(157, 167, 167, 0.86) 89.08%);
   box-shadow: 10px -6px 4px rgba(0, 0, 0, 0.25);
   border-radius: 60px;
-  
+}
+
+.Jeringa{
+  padding: 5px 10px;
+  margin: auto;
+  margin-top: 18px;
+  width: 100%;
+  max-width: 155px;
+  min-height: 130px;
+  display: flex;
+  display: block;
+  position: absolute;
+  border-radius: 210px;
+  justify-content: center;
+  background: black;
+  opacity: 0.9;
+
+
+}
+
+.Jeringa img{
+  min-height: 135px;
+  min-width: 80px;
+}
+
+.Logo{
+  display: flex;
+  display: block;
+  position: absolute;
+  text-align: right;
 }
 
 .login .loginContainer label {
@@ -56,12 +131,15 @@ button {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 19px;
-  padding: 10px;
+  padding: 18px;
   background: #FAE9DC;
-  color: black;
+  color: #000000;
+  font-size: 18px;
+  font-family: "Roboto";
   letter-spacing: 1px;
   border-radius: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .login .loginContainer .btnContainer {
@@ -69,51 +147,26 @@ button {
   padding: 24px 0;
 }
 
-.login .loginContainer .btnContainer p {
+/* .login .loginContainer .btnContainer p {
   margin: 14px 0 0 0;
   text-align: right;
   color: #fff;
-}
+} */
 
-.login .loginContainer .btnContainer p span {
+/* .login .loginContainer .btnContainer p span {
   color: yellow;
   font-weight: 500;
   letter-spacing: 0.5px;
   margin-left: 5px;
   cursor: pointer;
   transition: all 400ms ease-in-out;
-}
+} */
 
-.login .loginContainer .btnContainer p span:hover {
+/* .login .loginContainer .btnContainer p span:hover {
   color: red;
-}
+} */
 
 .login .loginContainer .errorMsg {
   color: red;
   font-size: 16px;
-}
-
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(180deg, rgba(243, 157, 91, 0.86) 7.34%, rgba(114, 116, 116, 0.86) 90.16%);
-}
-
-.hero nav {
-  background: #603bbb;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero nav h2 {
-  color: #fff;
-}
-
-.hero nav button {
-  width: 86px;
-  padding: 8px 0;
-  background: #3a2b58;
 }
