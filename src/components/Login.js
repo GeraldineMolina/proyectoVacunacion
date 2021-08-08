@@ -30,32 +30,6 @@ const Login = (props) => {
                    
                     <input type="text" placeholder="Usuario" autoFocus required value={email} onChange={e => setEmail(e.target.value)} />
                     <p className="errorMsg">{emailError}</p>
-<<<<<<< HEAD
-
-
-                <label>Password</label>
-                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                <p className="errorMsg">{PasswordError}</p>
-                    <div className="btnContainer">
-                        {hasAccount ? (
-                            <>
-                                <button onClick={handleLogin}>Iniciar Sesión</button>
-                                <p>
-                                ¿No tienes una cuenta?
-                                 <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
-                                </p>
-                            </>
-                    
-                        ) : (
-                            <>
-                            <button onClick={handleSignup}>Registrarse</button>
-                            <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p>
-                            </>
-                        )}
-                    </div>
-            </div>
-
-=======
                     
                     <input type="password" placeholder="Contraseña" required value={password} onChange={(e) => setPassword(e.target.value)} />
                     <p className="errorMsg">{PasswordError}</p>
@@ -84,7 +58,6 @@ const Login = (props) => {
                             )}
                         </div>
                 </div>
->>>>>>> 96c5b6365986e2782af7c4da809351842ef53d89
 
             </section>
         </div>
