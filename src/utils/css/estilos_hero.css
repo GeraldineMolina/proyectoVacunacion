@@ -1,4 +1,13 @@
+/* FUENTES */
+@font-face{
+  font-family: "Roboto";
+  src:url(../fonts/Roboto-Medium.woff);
+}
 
+@font-face{
+  font-family: "Poppins";
+  src:url(../fonts/Poppins-ExtraBold.woff);
+}
 
 /*---- estilos general----*/
 .hero {
@@ -33,16 +42,17 @@
 
 }
 
-.logoForja{
-    width: 12%;
-}
-
   /*--------Titulo crud-------*/
+
+  .contenedorTitul{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 
   .tituloCrud{
       font-size: 30px;
-      margin-left: 30%;
-      font-weight: bold;
+      font-family: 'Poppins';
       color: #4A4A4A;
       padding: 1px;
       text-shadow: 1px 1px 1px;
@@ -62,9 +72,10 @@
 
 /*agregar*/
 .agregar{
-    width: 14%;
-    padding: 8px;
-    border-radius: 8px;
+    width: 12%;
+    padding: 3px;
+    padding-bottom: 5px;
+    border-radius: 10px;
     background-color: #358608;
 }
 
@@ -76,9 +87,9 @@
 
 .bucarcon {
     display: flex;
-    color: #414040;
-    font-weight: bold;
-    font-size: 25px;
+    color: #4A4A4A;
+    font-family: 'Poppins';
+    font-size: 22px;
 }
 
 .botonBuscar{
@@ -86,17 +97,17 @@
     background-color: #AE766A;
     border-radius: 5px;   
     border: none; 
-    height: 30px; 
-    box-shadow: 1px 1px 1px;   
+    height: 6vh;    
+    margin-top: -2px;
+
 }
 
 .botonBuscar::placeholder {
     color: #F4F4F4;
-    font-style: italic;
-    margin: 2px;
+    margin: 0px;
     border: none;
     font-size: 15px;
-    padding-left: 8px;
+    padding-left: 6px;
 
   }
 
@@ -150,37 +161,13 @@
 /*cuerpo*/
   .tablaRow{
     font-size: 15px;
+    font-family: 'Roboto';
   }
 
   .cuerpoTabla{
 
   }
 
-<<<<<<< HEAD
-  /*---------------modals-------------*/
-
-.botonGuardar{
-  background-color: #BBAC21;
-}
-
-.botonGuardar:hover{
-  background-color: #DFCD2E;
-  cursor: pointer;
-}
-
-.contenedorTitulo{
-    background-color: #F1781C;  
-    width: 600px;
-    mar
-}
-  /*-------modal 1 ----------------------*/
-
-  .tituloModal1{
-
-    width:100%
-  }
-
-=======
   /*---------Modals------------*/ 
   .tituloModal1{
     background-color: #F1781C;
@@ -237,4 +224,3 @@
   transform: translate(-50%, -50%);
 }*/
   /*------------modal 2----------*/
->>>>>>> origin/Gerald
