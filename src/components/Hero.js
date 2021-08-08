@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import '../utils/css/estilos_hero.css';
 import { TableContainer,
          Table , 
@@ -9,8 +10,6 @@ import { TableContainer,
          Modal,
          Button}
     from '@material-ui/core';
-
-import React, {useState} from 'react';
 import forjaicono from '../utils/images/Logo_Forja.png';
 import editar from '../utils/images/iconodeeditar.png';
 import { makeStyles } from '@material-ui/core';
@@ -30,20 +29,20 @@ const useStyles=makeStyles((theme)=>({
 }));
 
 /*--------------------------------------*/
-const data= [
-    {id: 1000728673 , nombre: 'Geraldine Molina', sintomalogia: 'Dolores de cabeza  y dolor de garganta.', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
-    {id: 1008090611 , nombre: 'Natalia Gomez', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Segunda', laboratorio: 'Cafam' },
-    {id: 10738695 , nombre: 'Camilo Arias', sintomalogia: 'Dolores de cabeza y tos.', dosis: 'Primera', laboratorio: 'laboratorio clinico' },
-    {id: 101013157 , nombre: 'Andrea Castro', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
-    {id: 1077895574 , nombre: 'Yamile rincon', sintomalogia: 'Dolores de cabeza con dificultad para respirar.', dosis: 'Ninguna', laboratorio: 'laboratorio clinico' },
-    {id: 1055687137 , nombre: 'Samuel Herrera', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'Cafam' },
-
-];
-
 
 const Hero = (props) => {
 
     const { handleLogout } = props;
+
+    const data= [
+        {id: 1000728673 , nombre: 'Geraldine Molina', sintomalogia: 'Dolores de cabeza  y dolor de garganta.', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
+        {id: 1008090611 , nombre: 'Natalia Gomez', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Segunda', laboratorio: 'Cafam' },
+        {id: 10738695 , nombre: 'Camilo Arias', sintomalogia: 'Dolores de cabeza y tos.', dosis: 'Primera', laboratorio: 'laboratorio clinico' },
+        {id: 101013157 , nombre: 'Andrea Castro', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
+        {id: 1077895574 , nombre: 'Yamile rincon', sintomalogia: 'Dolores de cabeza con dificultad para respirar.', dosis: 'Ninguna', laboratorio: 'laboratorio clinico' },
+        {id: 1055687137 , nombre: 'Samuel Herrera', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'Cafam' },
+    
+    ];
     
     /*----------Modales---------*/
     const styles = useStyles();
@@ -115,7 +114,7 @@ const Hero = (props) => {
                     </nav>
                 </section>
                 <section> 
-                    <div > <h6 className="tituloCrud"> Crud dosis de vacunacion COVID-19</h6></div>
+                    <div className="contenedorTitul"> <h6 className="tituloCrud"> Crud dosis de vacunacion COVID-19</h6></div>
                     <div> 
                         <div className="contenedor_botones"> 
                             <button className="agregar" onClick={()=>abrirCerrarModal()} > + Agregar </button>
@@ -125,7 +124,15 @@ const Hero = (props) => {
                             <form>
                             
                             <label className="bucarcon">
-                               Buscar: <input type="text" buscar="buscar" className="botonBuscar" placeholder="Id" />
+                               Buscar:
+                               
+                                <input 
+                                    type="text" 
+                                    buscar="buscar" 
+                                    className="botonBuscar" 
+                                    placeholder="Buscar por Id" 
+                                />
+                            
                             </label>
                             </form>
                         </div>
@@ -145,7 +152,7 @@ const Hero = (props) => {
                                     </TableHead>
 
                                     <TableBody className="cuerpoTabla"> 
-                                        {data.map(celda=>(
+                                        {data.map(celda => (
                                             <TableRow> 
                                                 <TableCell> {celda.id} </TableCell>
                                                 <TableCell> {celda.nombre} </TableCell>

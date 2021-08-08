@@ -1,4 +1,5 @@
 import React from 'react';
+import '../utils/css/estilos_login.css';
 import Jeringa from '../utils/images/Jeringa.png'
 import Logo from '../utils/images/Logo_Forja.png'
 
@@ -38,11 +39,6 @@ const Login = (props) => {
                                 <>
                                 <button onClick={handleSignup}>Registrarse</button>
                                 <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p>
-                                    {/* <button onClick={handleLogin}>Iniciar Sesión</button>
-                                    <p>
-                                    ¿No tienes una cuenta?
-                                        <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
-                                    </p> */}
                                 </>
 
                             ) : (
@@ -52,8 +48,6 @@ const Login = (props) => {
                                     
                                         <span onClick={() => setHasAccount(!hasAccount)}></span>
                                     </p>
-                                {/* <button onClick={handleSignup}>Registrarse</button>
-                                <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p> */}
                                 </>
                             )}
                         </div>
