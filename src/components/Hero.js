@@ -64,58 +64,22 @@ const Hero = (props) => {
         setModal(!modal);
     }
     
-    const bodymodal=(
-        <div className={styles.modal}> 
-        
-            <div className={styles.contenedorTitulo} align="center"> 
-                <h2 className="tituloModal1"> Agregar Registro </h2> 
-            </div>
+    const bodymodal = () => {
+        return (
+            <h1> Formulario </h1>
+        )
+    }
 
-            <TextField label="Id" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Nombre" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Dosis" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
-            <br /> <br />
-            <div  className="botones"> 
-                <button className="botonGuardar"> Guardar </button>
-                <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
-            </div>
-        </div>
-    )
+    
     /*--------------modal2--------*/
     const [modalDos, setModalDos]=useState(false);
     const abrirCerrarModalDos =()=>{
         setModalDos(!modalDos);
     }
     
-    const bodymodaldos=(
-        <div className={styles.modal}> 
-        
-            <div className={styles.contenedorTitulo} align="center"> 
-                <h2 className="tituloModal1"> Editar Registro </h2> 
-            </div>
+    const bodymodaldos= () => {
 
-            <TextField label="Id" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Nombre" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Dosis" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
-            <br /> <br />
-            <div  className="botones"> 
-                <button className="botonGuardar"> Guardar </button>
-                <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
-            </div>
-        </div>
-    )
+    }
     /*-----------------------*/
     return(
         <>
