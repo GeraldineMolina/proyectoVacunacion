@@ -4,16 +4,16 @@ import Logo from '../utils/images/Logo_Forja.png'
 
 const Login = (props) => {
 
-    const { email, 
-        setEmail, 
-        password, 
-        setPassword, 
-        handleLogin, 
-        handleSignup, 
-        hasAccount, 
-        setHasAccount, 
-        emailError,     
-        PasswordError           
+    const { email,
+        setEmail,
+        password,
+        setPassword,
+        handleLogin,
+        handleSignup,
+        hasAccount,
+        setHasAccount,
+        emailError,    
+        PasswordError          
     } = props;
 
     return(
@@ -30,28 +30,27 @@ const Login = (props) => {
                    
                     <input type="text" placeholder="Usuario" autoFocus required value={email} onChange={e => setEmail(e.target.value)} />
                     <p className="errorMsg">{emailError}</p>
+                   
+                    <input type="password" placeholder="Contraseña" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <p className="errorMsg">{PasswordError}</p>
+                        <div className="btnContainer">
+                            {hasAccount ? (
+                                <>
+                                <button onClick={handleSignup}>Registrarse</button>
+                                <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p>
+                                </>
 
-                <label>Password</label>
-                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                <p className="errorMsg">{PasswordError}</p>
-                    <div className="btnContainer">
-                        {hasAccount ? (
-                            <>
-                                <button onClick={handleLogin}>Iniciar Sesión</button>
-                                <p>
-                                ¿No tienes una cuenta?
-                                 <span onClick={() => setHasAccount(!hasAccount)}>Registrate</span>
-                                </p>
-                            </>
-                    
-                        ) : (
-                            <>
-                            <button onClick={handleSignup}>Registrarse</button>
-                            <p>Tienes una cuenta ? <span onClick={() => setHasAccount(!hasAccount)}>Inicia Sesión</span></p>
-                            </>
-                        )}
-                    </div>
-            </div>
+                            ) : (
+                                <>
+                                <button type="button" onClick={handleLogin}>Continuar</button>
+                                    <p>
+                                   
+                                        <span onClick={() => setHasAccount(!hasAccount)}></span>
+                                    </p>
+                                </>
+                            )}
+                        </div>
+                </div>
 
             </section>
         </div>

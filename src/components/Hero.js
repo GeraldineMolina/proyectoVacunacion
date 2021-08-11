@@ -14,6 +14,9 @@ import React, {useState} from 'react';
 import forjaicono from '../utils/images/Logo_Forja.png';
 import editar from '../utils/images/iconodeeditar.png';
 import { makeStyles } from '@material-ui/core';
+import Formulario from './Formulario'
+
+
 
 const useStyles=makeStyles((theme)=>({
     modal:{
@@ -64,22 +67,58 @@ const Hero = (props) => {
         setModal(!modal);
     }
     
-    const bodymodal = () => {
-        return (
-            <h1> Formulario </h1>
-        )
-    }
+    const bodymodal=(
+        <div className={styles.modal}> 
+        
+            <div className={styles.contenedorTitulo} align="center"> 
+                <h2 className="tituloModal1"> Agregar Registro </h2> 
+            </div>
 
-    
+            <TextField label="Id" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Nombre" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Dosis" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
+            <br /> <br />
+            <div  className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
+            </div>
+        </div>
+    )
     /*--------------modal2--------*/
     const [modalDos, setModalDos]=useState(false);
     const abrirCerrarModalDos =()=>{
         setModalDos(!modalDos);
     }
     
-    const bodymodaldos= () => {
+    const bodymodaldos=(
+        <div className={styles.modal}> 
+        
+            <div className={styles.contenedorTitulo} align="center"> 
+                <h2 className="tituloModal1"> Editar Registro </h2> 
+            </div>
 
-    }
+            <TextField label="Id" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Nombre" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Dosis" className={styles.TextField   }> </TextField>
+            <br />
+            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
+            <br /> <br />
+            <div  className="botones"> 
+                <button className="botonGuardar"> Guardar </button>
+                <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
+            </div>
+        </div>
+    )
     /*-----------------------*/
     return(
         <>
@@ -139,12 +178,14 @@ const Hero = (props) => {
                                     </TableBody>
                                 </Table>
                             </TableContainer>
+                            
                         </div>
                     </div>
                 </section>
             </div> 
         </> 
     );
+
 }
 
-export default Hero;
+export default Hero ;
