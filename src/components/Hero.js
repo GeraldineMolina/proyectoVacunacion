@@ -19,43 +19,25 @@ const useStyles=makeStyles((theme)=>({
         position: 'absolute',
         width: 600,
         background: '#F5F5F5',
-<<<<<<< HEAD
-=======
         border: "5px",
->>>>>>> origin/Gerald
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-<<<<<<< HEAD
-        borderRadius:"16px",
-    },
-    modalEditar:{
-        position: 'absolute',
-        width: 600,
-        background: '#F5F5F5',
-=======
     },
     modalDos:{
         position: 'relative',
         width: 600,
         background: '#F5F5F5',
         border: "5px",
->>>>>>> origin/Gerald
         boxShadow: theme.shadows[5],
         padding: "16px 32px 24px",
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-<<<<<<< HEAD
-        borderRadius:"16px",
-
-    }
-=======
     },
 
->>>>>>> origin/Gerald
 }));
 
 /*--------------------------------------*/
@@ -85,16 +67,12 @@ const Hero = (props) => {
     
     const bodymodal=(
         <div className={styles.modal}> 
-<<<<<<< HEAD
-            <div className="contenedorTitulo" align="center"> 
-=======
         
             <div className={styles.contenedorTitulo} align="center"> 
->>>>>>> origin/Gerald
                 <h2 className="tituloModal1"> Agregar Registro </h2> 
             </div>
 
-            <TextField label="Id" className={styles.TextField   }> </TextField>
+            <TextField label="Id" className={styles.TextField}> </TextField>
             <br />
             <TextField label="Nombre" className={styles.TextField   }> </TextField>
             <br />
@@ -104,133 +82,106 @@ const Hero = (props) => {
             <br />
             <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
             <br /> <br />
-<<<<<<< HEAD
-            <div> 
-                <button className="botonGuardar"> Guardar </button>
-                <button  onClick={()=>abrirCerrarModal()}> Cancelar </button>
-=======
             <div  className="botones"> 
                 <button className="botonGuardar"> Guardar </button>
                 <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
->>>>>>> origin/Gerald
             </div>
         </div>
     )
-    /*--------------modal2--------*/
-<<<<<<< HEAD
-    const [modalEditar, setModalEditar]=useState(false);
-
-    const abrirCerrarModalEditar =()=>{
-        setModalEditar(!modalEditar);
-=======
-    const [modalDos, setModalDos]=useState(false);
-    const abrirCerrarModalDos =()=>{
-        setModalDos(!modalDos);
->>>>>>> origin/Gerald
-    }
-    
-    const bodymodaldos=(
-        <div className={styles.modal}> 
-        
-            <div className={styles.contenedorTitulo} align="center"> 
-                <h2 className="tituloModal1"> Editar Registro </h2> 
-            </div>
-
-            <TextField label="Id" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Nombre" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Dosis" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
-            <br /> <br />
-<<<<<<< HEAD
-            <div> 
-                <button className="botonGuardar"> Guardar </button>
-                <button  onClick={()=>abrirCerrarModalEditar()}> Cancelar </button>
-=======
-            <div  className="botones"> 
-                <button className="botonGuardar"> Guardar </button>
-                <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
->>>>>>> origin/Gerald
-            </div>
-        </div>
-    )
-    /*-----------------------*/
-    return(
-        <>
-            {/*Tabla*/}
-            <div className="hero"> 
-                <section className="hero2">
-                    <nav>
-                        <button className="botonVolver" onClick={handleLogout}>Volver a inicio de Sesion </button>
-                        <img  className="logoForja" src={forjaicono} />
-                    </nav>
-                </section>
-                <section> 
-                    <div className="contenedorTitul"> <h6 className="tituloCrud"> Crud dosis de vacunacion COVID-19</h6></div>
-                    <div> 
-                        <div className="contenedor_botones"> 
-                            <button className="agregar" onClick={()=>abrirCerrarModal()} > + Agregar </button>
-                            <Modal open={modal} onClose={abrirCerrarModal}>
-                                {bodymodal}
-                            </Modal>
-                            <form>
-                            
-                            <label className="bucarcon">
-                               Buscar:
-                               
-                                <input 
-                                    type="text" 
-                                    buscar="buscar" 
-                                    className="botonBuscar" 
-                                    placeholder="Buscar por Id" 
-                                />
-                            
-                            </label>
-                            </form>
-                        </div>
-
-                        <div className="contenedor_tabla">
-                            <TableContainer className="tablaContenedor"> 
-                                <Table className="tabla" > 
-                                    <TableHead className="tablacabecera"> 
-                                        <TableRow className="tablaRow"> 
-                                            <TableCell><h2 className="row"> Id </h2></TableCell>
-                                            <TableCell><h2 className="row1">Nombre</h2></TableCell>
-                                            <TableCell><h2 className="row1"> Sintomalogia</h2></TableCell>
-                                            <TableCell><h2 className="row1">Dosis </h2></TableCell>
-                                            <TableCell><h2 className="row1">Laboratorio</h2></TableCell>
-                                            <TableCell><h2 className="row1">Editar</h2></TableCell>
-                                        </TableRow>
-                                    </TableHead>
-
-                                    <TableBody className="cuerpoTabla"> 
-                                        {data.map(celda => (
-                                            <TableRow> 
-                                                <TableCell> {celda.id} </TableCell>
-                                                <TableCell> {celda.nombre} </TableCell>
-                                                <TableCell> {celda.sintomalogia} </TableCell>
-                                                <TableCell> {celda.dosis} </TableCell>
-                                                <TableCell> {celda.laboratorio} </TableCell>
-                                                <TableCell> <img  className="editar" src={editar}  onClick={()=>abrirCerrarModalDos()} /></TableCell>
-                                                <Modal open={modalDos} onClose={abrirCerrarModalDos}>
-                                                    {bodymodaldos}
-                                                </Modal>
-                                            </TableRow>
-                                        
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </TableContainer>
-                        </div>
-                    </div>
-                </section>
-            </div> 
-        </> 
-    );
-}
-
-export default Hero;
+     /*--------------modal2--------*/
+     const [modalDos, setModalDos]=useState(false);
+     const abrirCerrarModalDos =()=>{
+         setModalDos(!modalDos);
+     }
+     
+     const bodymodaldos=(
+         <div className={styles.modal}> 
+         
+             <div className={styles.contenedorTitulo} align="center"> 
+                 <h2 className="tituloModal1"> Editar Registro </h2> 
+             </div>
+ 
+             <TextField label="Id" className={styles.TextField   }> </TextField>
+             <br />
+             <TextField label="Nombre" className={styles.TextField   }> </TextField>
+             <br />
+             <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
+             <br />
+             <TextField label="Dosis" className={styles.TextField   }> </TextField>
+             <br />
+             <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
+             <br /> <br />
+             <div  className="botones"> 
+                 <button className="botonGuardar"> Guardar </button>
+                 <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
+             </div>
+         </div>
+     )
+     /*-----------------------*/
+     return(
+         <>
+             {/*Tabla*/}
+             <div className="hero"> 
+                 <section className="hero2">
+                     <nav>
+                         <button className="botonVolver" onClick={handleLogout}>Volver a inicio de Sesion </button>
+                         <img  className="logoForja" src={forjaicono} />
+                     </nav>
+                 </section>
+                 <section> 
+                     <div className="contenedorTitul"> <h6 className="tituloCrud"> Crud dosis de vacunacion COVID-19</h6></div>
+                     <div> 
+                         <div className="contenedor_botones"> 
+                             <button className="agregar" onClick={()=>abrirCerrarModal()} > + Agregar </button>
+                             <Modal open={modal} onClose={abrirCerrarModal}>
+                                 {bodymodal}
+                             </Modal>
+                             <form>
+                             
+                             <label className="bucarcon">
+                                Buscar: <input type="text" buscar="buscar" className="botonBuscar" placeholder="Id" />
+                             </label>
+                             </form>
+                         </div>
+ 
+                         <div className="contenedor_tabla">
+                             <TableContainer className="tablaContenedor"> 
+                                 <Table className="tabla" > 
+                                     <TableHead className="tablacabecera"> 
+                                         <TableRow className="tablaRow"> 
+                                             <TableCell><h2 className="row"> Id </h2></TableCell>
+                                             <TableCell><h2 className="row1">Nombre</h2></TableCell>
+                                             <TableCell><h2 className="row1"> Sintomalogia</h2></TableCell>
+                                             <TableCell><h2 className="row1">Dosis </h2></TableCell>
+                                             <TableCell><h2 className="row1">Laboratorio</h2></TableCell>
+                                             <TableCell><h2 className="row1">Editar</h2></TableCell>
+                                         </TableRow>
+                                     </TableHead>
+ 
+                                     <TableBody className="cuerpoTabla"> 
+                                         {data.map(celda=>(
+                                             <TableRow> 
+                                                 <TableCell> {celda.id} </TableCell>
+                                                 <TableCell> {celda.nombre} </TableCell>
+                                                 <TableCell> {celda.sintomalogia} </TableCell>
+                                                 <TableCell> {celda.dosis} </TableCell>
+                                                 <TableCell> {celda.laboratorio} </TableCell>
+                                                 <TableCell> <img  className="editar" src={editar}  onClick={()=>abrirCerrarModalDos()} /></TableCell>
+                                                 <Modal open={modalDos} onClose={abrirCerrarModalDos}>
+                                                     {bodymodaldos}
+                                                 </Modal>
+                                             </TableRow>
+                                         
+                                         ))}
+                                     </TableBody>
+                                 </Table>
+                             </TableContainer>
+                         </div>
+                     </div>
+                 </section>
+             </div> 
+         </> 
+     );
+ }
+ 
+ export default Hero;

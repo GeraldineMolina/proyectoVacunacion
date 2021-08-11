@@ -99,8 +99,15 @@
     border: none; 
     height: 6vh;    
     margin-top: -2px;
-
 }
+
+.bucarcon input {
+  color: #F4F4F4;
+  font-size: 18px;
+  font-family: "Roboto";
+  padding-left: 6px;
+}
+
 
 .botonBuscar::placeholder {
     color: #F4F4F4;
@@ -224,3 +231,50 @@
   transform: translate(-50%, -50%);
 }*/
   /*------------modal 2----------*/
+
+/* RESPONSIVE */
+
+  @media screen and (min-width: 360px) and (max-width: 554px){
+    .hero2 nav{
+      padding: 20px 15px;
+    }
+
+    .agregar{
+      width: 38%;
+      margin-bottom: 20px;
+    }
+
+    .contenedor_botones{
+      display: flex;
+      flex-direction: column;
+      margin-top: 8%;
+    }
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 900px){
+
+    .botonVolver{
+      width: 50%;
+    }
+
+  }
+
+  .hero2 nav{
+    padding: 20px 15px;
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 600px){
+
+    .hero2 nav{
+      padding: 20px 15px;
+    }
+
+  }
+
+  @media screen and (min-width: 555px) and (max-width: 1080px){
+
+    .agregar{
+      width: 28%;
+    }
+
+  }
