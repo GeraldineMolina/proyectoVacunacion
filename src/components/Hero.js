@@ -7,13 +7,16 @@ import { TableContainer,
          TableCell,
          TextField,
          Modal,
+
          Button}
     from '@material-ui/core';
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import forjaicono from '../utils/images/Logo_Forja.png';
 import editar from '../utils/images/iconodeeditar.png';
 import { makeStyles } from '@material-ui/core';
+import fire from "../firebase-config";
+import Paciente, {insertarPaciente} from "./Paciente";
 
 const useStyles=makeStyles((theme)=>({
     modal:{
@@ -42,20 +45,30 @@ const useStyles=makeStyles((theme)=>({
 }));
 
 /*--------------------------------------*/
-const data= [
-    {id: 1000728673 , nombre: 'Geraldine Molina', sintomalogia: 'Dolores de cabeza  y dolor de garganta.', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
-    {id: 1008090611 , nombre: 'Natalia Gomez', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Segunda', laboratorio: 'Cafam' },
-    {id: 10738695 , nombre: 'Camilo Arias', sintomalogia: 'Dolores de cabeza y tos.', dosis: 'Primera', laboratorio: 'laboratorio clinico' },
-    {id: 101013157 , nombre: 'Andrea Castro', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'laboratorio Rh' },
-    {id: 1077895574 , nombre: 'Yamile rincon', sintomalogia: 'Dolores de cabeza con dificultad para respirar.', dosis: 'Ninguna', laboratorio: 'laboratorio clinico' },
-    {id: 1055687137 , nombre: 'Samuel Herrera', sintomalogia: 'Tos, dificulatd para respirar y fiebre de 38º', dosis: 'Primera', laboratorio: 'Cafam' },
-
-];
 
 
 const Hero = (props) => {
 
     const { handleLogout } = props;
+
+    const temp=[];
+    const [lstPacientes, setLstPacientes]=useState([]);
+    const imprimirPacientes = () =>{
+        var prueba=fire.database().ref("Pacientes");
+        prueba.on('value', (snapshot)=>{
+            snapshot.forEach(function(childSnapshot){
+                temp.push(childSnapshot.val());
+                console.log(childSnapshot.val());
+            });
+        });
+        setLstPacientes(temp);
+    }
+
+    useEffect(()=>{
+        imprimirPacientes();
+    },[]);
+
+
     
     /*----------Modales---------*/
     const styles = useStyles();
@@ -63,28 +76,48 @@ const Hero = (props) => {
     const abrirCerrarModal =()=>{
         setModal(!modal);
     }
+
+    const [datos, setDatos]=useState({
+        id: '',
+        nombre: '',
+        sintomatologia: '',
+        dosis: '',
+        laboratorio: ''
+    });
+
+    const enviarInformacion = (event) =>{
+        setDatos({
+            ...datos,
+            [event.target.name] : event.target.value
+        })
+    }
     
     const bodymodal=(
-        <div className={styles.modal}> 
-        
+        <div className={styles.modal}>         
             <div className={styles.contenedorTitulo} align="center"> 
                 <h2 className="tituloModal1"> Agregar Registro </h2> 
             </div>
+            <form>
+                <TextField id="idInsert" name="id" label="Id" onChange={enviarInformacion} className={styles.TextField   }></TextField>
+                <br />
 
-            <TextField label="Id" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Nombre" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Dosis" className={styles.TextField   }> </TextField>
-            <br />
-            <TextField label="Laboratorio" className={styles.TextField   }> </TextField>
-            <br /> <br />
-            <div  className="botones"> 
-                <button className="botonGuardar"> Guardar </button>
-                <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
-            </div>
+                <TextField id="NombreInsert" name="nombre" label="Nombre" onChange={enviarInformacion} className={styles.TextField   }> </TextField>
+                <br />
+
+                <TextField id="SintomatologiaInsert" name="sintomatologia" onChange={enviarInformacion} label="Sintomatologia" className={styles.TextField   }> </TextField>
+                <br />
+
+                <TextField id="DosisInsert" name="dosis" label="Dosis" onChange={enviarInformacion} className={styles.TextField   }> </TextField>
+                <br />
+
+                <TextField id="LaboratorioInsert" name="laboratorio" onChange={enviarInformacion} label="Laboratorio" className={styles.TextField   }> </TextField>
+                <br /> <br />
+
+                <div  className="botones"> 
+                    <button className="botonGuardar" onClick={()=>insertarPaciente(datos.id, datos.nombre, datos.sintomatologia, datos.dosis, datos.laboratorio)}>  Guardar </button>
+                    <button className="botonCancelar" onClick={()=>abrirCerrarModal()}> Cancelar </button>
+                </div>
+            </form>
         </div>
     )
     /*--------------modal2--------*/
@@ -93,15 +126,13 @@ const Hero = (props) => {
         setModalDos(!modalDos);
     }
     
-    const bodymodaldos=(
+    const bodymodaldos = () =>{ 
         <div className={styles.modal}> 
         
             <div className={styles.contenedorTitulo} align="center"> 
                 <h2 className="tituloModal1"> Editar Registro </h2> 
             </div>
 
-            <TextField label="Id" className={styles.TextField   }> </TextField>
-            <br />
             <TextField label="Nombre" className={styles.TextField   }> </TextField>
             <br />
             <TextField label="Sintomalogia" className={styles.TextField   }> </TextField>
@@ -115,7 +146,9 @@ const Hero = (props) => {
                 <button className="botonCancelar" onClick={()=>abrirCerrarModalDos()}> Cancelar </button>
             </div>
         </div>
-    )
+    }
+
+
     /*-----------------------*/
     return(
         <>
@@ -124,7 +157,7 @@ const Hero = (props) => {
                 <section className="hero2">
                     <nav>
                         <button className="botonVolver" onClick={handleLogout}>Volver a inicio de Sesion </button>
-                        <img  className="logoForja" src={forjaicono} />
+                        <img className="logoForja" alt="forjaIcono" src={forjaicono} />
                     </nav>
                 </section>
                 <section> 
@@ -150,28 +183,28 @@ const Hero = (props) => {
                                         <TableRow className="tablaRow"> 
                                             <TableCell><h2 className="row"> Id </h2></TableCell>
                                             <TableCell><h2 className="row1">Nombre</h2></TableCell>
-                                            <TableCell><h2 className="row1"> Sintomalogia</h2></TableCell>
+                                            <TableCell><h2 className="row1">Sintomatologia</h2></TableCell>
                                             <TableCell><h2 className="row1">Dosis </h2></TableCell>
                                             <TableCell><h2 className="row1">Laboratorio</h2></TableCell>
                                             <TableCell><h2 className="row1">Editar</h2></TableCell>
                                         </TableRow>
                                     </TableHead>
 
-                                    <TableBody className="cuerpoTabla"> 
-                                        {data.map(celda=>(
-                                            <TableRow> 
-                                                <TableCell> {celda.id} </TableCell>
-                                                <TableCell> {celda.nombre} </TableCell>
-                                                <TableCell> {celda.sintomalogia} </TableCell>
-                                                <TableCell> {celda.dosis} </TableCell>
-                                                <TableCell> {celda.laboratorio} </TableCell>
-                                                <TableCell> <img  className="editar" src={editar}  onClick={()=>abrirCerrarModalDos()} /></TableCell>
-                                                <Modal open={modalDos} onClose={abrirCerrarModalDos}>
-                                                    {bodymodaldos}
-                                                </Modal>
-                                            </TableRow>
-                                        
-                                        ))}
+                                    <TableBody className="cuerpoTabla">
+                                        {lstPacientes.map(item => {
+                                            return(
+                                                <TableRow className="tablaRow"> 
+                                                    <TableCell><h2 className="row" key="{item.id}"> {item.id} </h2></TableCell>
+                                                    <TableCell><h2 className="row1">{item.nombre}</h2></TableCell>
+                                                    <TableCell><h2 className="row1">{item.sintomatologia}</h2></TableCell>
+                                                    <TableCell><h2 className="row1">{item.dosis}</h2></TableCell>
+                                                    <TableCell><h2 className="row1">{item.laboratorio}</h2></TableCell>
+                                                    <TableCell><img className="editar" alt="iEditar" src={editar}  onClick={()=>abrirCerrarModalDos()} /></TableCell>
+                                                    
+                                                </TableRow>
+                                            )
+                                        }
+                                        )}
                                     </TableBody>
                                 </Table>
                             </TableContainer>

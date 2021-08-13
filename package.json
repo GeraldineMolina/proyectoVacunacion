@@ -10,10 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.2",
     "bootswatch": "^5.0.2",
-<<<<<<< HEAD
-=======
     "firebase": "^9.0.0-beta.6",
->>>>>>> 2edb7bb621230df0415a194c0bd315c22e23e95b
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",

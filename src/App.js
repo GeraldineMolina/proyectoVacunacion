@@ -42,7 +42,7 @@ function App() {
             
         }
       });
-
+      
   };
 
   const handleSignup = () => {
@@ -82,7 +82,6 @@ function App() {
 
   useEffect(() => {
     authListener();
-
   }, [])
 
   return (
