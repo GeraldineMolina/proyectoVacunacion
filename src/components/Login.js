@@ -1,4 +1,5 @@
 import React from 'react';
+import '../utils/css/estilos_login.css';
 import Jeringa from '../utils/images/Jeringa.png'
 import Logo from '../utils/images/Logo_Forja.png'
 
@@ -30,7 +31,7 @@ const Login = (props) => {
                    
                     <input type="text" placeholder="Usuario" autoFocus required value={email} onChange={e => setEmail(e.target.value)} />
                     <p className="errorMsg">{emailError}</p>
-                   
+                    
                     <input type="password" placeholder="Contraseña" required value={password} onChange={(e) => setPassword(e.target.value)} />
                     <p className="errorMsg">{PasswordError}</p>
                         <div className="btnContainer">
@@ -44,7 +45,7 @@ const Login = (props) => {
                                 <>
                                 <button type="button" onClick={handleLogin}>Continuar</button>
                                     <p>
-                                   
+                                    
                                         <span onClick={() => setHasAccount(!hasAccount)}></span>
                                     </p>
                                 </>

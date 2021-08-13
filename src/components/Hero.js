@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import '../utils/css/estilos_hero.css';
 import { TableContainer,
          Table , 
@@ -10,8 +11,6 @@ import { TableContainer,
 
          Button}
     from '@material-ui/core';
-
-import React, {useEffect, useState} from 'react';
 import forjaicono from '../utils/images/Logo_Forja.png';
 import editar from '../utils/images/iconodeeditar.png';
 import { makeStyles } from '@material-ui/core';
@@ -46,7 +45,6 @@ const useStyles=makeStyles((theme)=>({
 
 /*--------------------------------------*/
 
-
 const Hero = (props) => {
 
     const { handleLogout } = props;
@@ -71,6 +69,8 @@ const Hero = (props) => {
 
     
     /*----------Modales---------*/
+
+    /*-----------modal1------------*/
     const styles = useStyles();
     const [modal, setModal]=useState(false);
     const abrirCerrarModal =()=>{
