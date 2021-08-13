@@ -7,37 +7,39 @@ import './App.css';
 
 
 function App() {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [PasswordError, setPasswordError] = useState('');
-  const [hasAccount, setHasAccount] = useState(false);
+  const [user, setUser] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente.
+  const [email, setEmail] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
+  const [password, setPassword] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
+  const [emailError, setEmailError] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
+  const [PasswordError, setPasswordError] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
+  const [hasAccount, setHasAccount] = useState(false); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
 
-  const clearInputs = () => {
-    setEmail('');
+  const clearInputs = () => { // Borrar las entradas 
+    setEmail(''); // IMPORTANTE: cuando llamamos a la función set de un useState(), se sobrescribe el contenido de la variable.
     setPassword('');
   }
 
-  const clearErrors = () => {
-    setEmailError('');
+  const clearErrors = () => { //Borrar los errores
+    setEmailError(''); // IMPORTANTE: cuando llamamos a la función set de un useState(), se sobrescribe el contenido de la variable.
     setPasswordError('');
   }
 
+  // ---------------------------------FUNCION PARA EL INICIO DE SESION-------------------
+
   const handleLogin = () => {
-    clearErrors();
+    clearErrors(); // Borrar los errores
     fire
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch((err) => {
+      .auth() //Autenticacion de usuarios
+      .signInWithEmailAndPassword(email, password) // Solo se puede iniciar sesion con correo y contraseña
+      .catch((err) => { //Detectar errores
         switch (err.code) {
-          case "auth/invalid-email":
-          case "auth/user-disabled":
-          case "auth/user-not-found":
-            setEmailError(err.message);
+          case "auth/invalid-email": // Correo invalido
+          case "auth/user-disabled": // Usuario desabilitado
+          case "auth/user-not-found": // No se encuentra el usuario 
+            setEmailError(err.message); // Estado de mensaje de error para el correo electronico.
             break;
-          case "auth/wrong-password":
-            setPasswordError(err.message);
+          case "auth/wrong-password": // Contraseña incorrecta
+            setPasswordError(err.message); // Estado de mensaje de error para la contraseña
             break;
             
         }
@@ -64,14 +66,15 @@ function App() {
       });
   }
 
+  //------------------------FUNCION QUE PERMITE EL CIERRE DE SESION--------------------
   const handleLogout = () => {
     fire.auth().signOut();
   };
 
-  const authListener = () => {
+  const authListener = () => { // Verificacion de que el usuario existe 
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInputs();
+        clearInputs(); // Borrar las entradas 
         setUser(user);
       }
       else {
@@ -80,7 +83,7 @@ function App() {
    });
   };
 
-  useEffect(() => {
+  useEffect(() => { //Esta función se ejecuta por defecto cuando el componente se renderiza por primera vez, y después cada vez que el componente se actualice.
     authListener();
   }, [])
 

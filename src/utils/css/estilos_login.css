@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
   }
+
+  /* ---------FUENTES---------*/
   
   @font-face{
     font-family: "Roboto";
@@ -151,7 +153,7 @@
     font-size: 16px;
   }
   
-  /* RESPONSIVE */
+  /*------------------------------------RESPONSIVE------------------------------------*/
 
   @media screen and (min-width: 360px) and (max-width: 699px){
     .Logo {
