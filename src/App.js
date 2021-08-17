@@ -14,6 +14,9 @@ function App() {
   const [PasswordError, setPasswordError] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
   const [hasAccount, setHasAccount] = useState(false); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
 
+
+
+
   const clearInputs = () => { // Borrar las entradas 
     setEmail(''); // IMPORTANTE: cuando llamamos a la función set de un useState(), se sobrescribe el contenido de la variable.
     setPassword('');
@@ -44,7 +47,7 @@ function App() {
             
         }
       });
-
+      
   };
 
   const handleSignup = () => {
@@ -85,7 +88,6 @@ function App() {
 
   useEffect(() => { //Esta función se ejecuta por defecto cuando el componente se renderiza por primera vez, y después cada vez que el componente se actualice.
     authListener();
-
   }, [])
 
   return (
@@ -111,6 +113,8 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
 

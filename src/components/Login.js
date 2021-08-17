@@ -5,16 +5,16 @@ import Logo from '../utils/images/Logo_Forja.png'
 
 const Login = (props) => {
 
-    const { email, 
-        setEmail, 
-        password, 
-        setPassword, 
-        handleLogin, 
-        handleSignup, 
-        hasAccount, 
-        setHasAccount, 
-        emailError,     
-        PasswordError           
+    const { email,
+        setEmail,
+        password,
+        setPassword,
+        handleLogin,
+        handleSignup,
+        hasAccount,
+        setHasAccount,
+        emailError,    
+        PasswordError          
     } = props;
 
     return(
