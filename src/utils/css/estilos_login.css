@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------FUENTES---------*/
+  
+  @font-face{
+    font-family: "Roboto";
+    src:url(../fonts/Roboto-Medium.woff);
+  }
+  
+  @font-face{
+    font-family: "Poppins";
+    src:url(../fonts/Poppins-ExtraBold.woff);
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    width: 50%;
+    padding: 15px 0;
+    color: #fff;
+    font-family: "Poppins";
+    font-size: 20px;
+    letter-spacing: 1px;
+    background: #05989C;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .btnContainer button:hover{
+    background: #009c8c;
+  }
+  
+  input::placeholder {
+    font-family: "Poppins";
+    color: #828485;
+    font-size: 18px;
+  }
+  
+  .Title {
+    margin-top:105px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 30px;
+    color: #4A4A4A;
+    font-family: "Poppins";
+  }
+  
+  .btnContainer{
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 70px;
+  }
+  
+  .login {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Login2 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+    background-image: url(../images/Fondo_inicio_de_sesion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .loginContainer {
+    padding: 60px;
+    margin: auto;
+    width: 100%;
+    max-width: 420px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(138.39deg, rgba(243, 157, 91, 0.86) 20.89%, rgba(157, 167, 167, 0.86) 89.08%);
+    box-shadow: 10px -6px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+  }
+  
+  .Jeringa{
+    padding: 5px 10px;
+    margin: auto;
+    margin-top: 18px;
+    width: 100%;
+    max-width: 155px;
+    min-height: 130px;
+    display: flex;
+    display: block;
+    position: absolute;
+    border-radius: 210px;
+    justify-content: center;
+    background: black;
+    opacity: 0.9;
+  
+  
+  }
+  
+  .Jeringa img{
+    min-height: 135px;
+    min-width: 80px;
+  }
+  
+  .Logo{
+    display: flex;
+    display: block;
+    position: absolute;
+    text-align: right;
+  }
+  
+  .login .loginContainer label {
+    color: white;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  .login .loginContainer input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 18px;
+    background: #FAE9DC;
+    color: #000000;
+    font-size: 18px;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .login .loginContainer .btnContainer {
+    width: 100%;
+    padding: 24px 0;
+  }
+  
+  .login .loginContainer .errorMsg {
+    color: red;
+    font-size: 16px;
+  }
+  
+  /*------------------------------------RESPONSIVE------------------------------------*/
+
+  @media screen and (min-width: 360px) and (max-width: 699px){
+    .Logo {
+      bottom: 1px;
+    }
+
+    .Logo img {
+      width:60% ;
+      height: 75 vh ;
+    }
+
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 444px){
+    button{
+      width: 98%;
+    }
+
+    .btnContainer{
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    .Jeringa{
+      padding: 5px 10px;
+      margin: auto;
+      margin-top: 18px;
+      width: 100%;
+      max-width: 135px;
+      min-height: 110px;
+      border-radius: 200px;
+    }
+    
+    .Jeringa img{
+      min-height: 115px;
+      min-width: 60px;
+    }
+
+    .Title {
+      margin-top:100px;
+      margin-bottom: 18px;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
