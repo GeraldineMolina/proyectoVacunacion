@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/proyectoVacunacion/static/css/main.29069560.chunk.css",
+    "main.js": "/proyectoVacunacion/static/js/main.f89e65da.chunk.js",
+    "main.js.map": "/proyectoVacunacion/static/js/main.f89e65da.chunk.js.map",
+    "runtime-main.js": "/proyectoVacunacion/static/js/runtime-main.0997edde.js",
+    "runtime-main.js.map": "/proyectoVacunacion/static/js/runtime-main.0997edde.js.map",
+    "static/js/2.2d9eb0b7.chunk.js": "/proyectoVacunacion/static/js/2.2d9eb0b7.chunk.js",
+    "static/js/2.2d9eb0b7.chunk.js.map": "/proyectoVacunacion/static/js/2.2d9eb0b7.chunk.js.map",
+    "index.html": "/proyectoVacunacion/index.html",
+    "static/css/main.29069560.chunk.css.map": "/proyectoVacunacion/static/css/main.29069560.chunk.css.map",
+    "static/js/2.2d9eb0b7.chunk.js.LICENSE.txt": "/proyectoVacunacion/static/js/2.2d9eb0b7.chunk.js.LICENSE.txt",
+    "static/media/estilos_login.css": "/proyectoVacunacion/static/media/Roboto-Medium.6e46090e.woff",
+    "static/media/iconodeeditar.694cc44d.png": "/proyectoVacunacion/static/media/iconodeeditar.694cc44d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0997edde.js",
+    "static/js/2.2d9eb0b7.chunk.js",
+    "static/css/main.29069560.chunk.css",
+    "static/js/main.f89e65da.chunk.js"
+  ]
+}
