@@ -117,9 +117,9 @@
 }
 
 .buscarBoton{
-  width: 12%;
+  /* width: 12%; */
   height: 100%;
-  font-size: small;
+  font-size: 20px;
   margin-left: 1%;
   padding: 0px;
   padding-bottom: 0px;
@@ -128,9 +128,9 @@
 }
 
 .limpiarBoton{
-  width: 30%;
+  width: 60%;
   height: 100%;
-  font-size: small;
+  font-size: 20px;
   margin-left: 1%;
   padding: 0px;
   padding-bottom: 0px;
@@ -202,9 +202,6 @@
     border-radius: 40px;
     
   }
-  .tabla{
-
-  }
 /*---------cabecera---------*/
   .tablacabecera {
       background-color: #F1781C;
@@ -228,10 +225,6 @@
   .tablaRow{
     font-size: 15px;
     font-family: 'Roboto';
-  }
-
-  .cuerpoTabla{
-    
   }
 
   /*---------Modals---------*/ 
@@ -277,48 +270,54 @@
 .botonCancelar:hover{
   background-color: #F73D17;
 }
-  /*---------modal 1 -----------*/
-  /*.modal{
-    position: absolute;
-    width: 600px;
-    background: #F5F5F5;
-    border: 5px;
-    box-shadow: theme.shadows[5];
-    padding: 16px 32px 24px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.modalDos{
-  position: absolute;
-  width: 600px;
-  background: #F5F5F5;
-  border: 5px;
-  box-shadow: theme.shadows[5];
-  padding: 16px 32px 24px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}*/
-  /*------------modal 2----------*/
-
+  
 /* ----------------------------------RESPONSIVE-----------------------------------*/
 
-  @media screen and (min-width: 360px) and (max-width: 554px){
+  @media screen and (min-width: 360px) and (max-width: 860px){
     .hero2 nav{
       padding: 20px 15px;
     }
 
     .agregar{
-      width: 38%;
+      width: 88%;
       margin-bottom: 20px;
     }
 
-    .contenedor_botones{
+    .recargarDatos{
+      width: 65%;
+    }
+    
+    
+    .contenedor_botones1{
       display: flex;
       flex-direction: column;
       margin-top: 8%;
     }
+
+    .contenedor_botones2{
+      display: flex;
+      flex-direction: column;
+      margin-top: 8%;
+    }
+
+    .buscarBoton{
+
+      width: 50%;
+  
+    }
+
+    .limpiarBoton{
+      width: 90%;
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 500px) {
+
+    .bucarcon input {
+      width: 70px;
+    }
+
   }
 
   @media screen and (min-width: 360px) and (max-width: 900px){
@@ -341,10 +340,14 @@
 
   }
 
-  @media screen and (min-width: 555px) and (max-width: 1080px){
+  @media screen and (min-width: 861px) and (max-width: 1080px){
 
     .agregar{
-      width: 28%;
+      width: 58%;
+    }
+
+    .bucarcon input {
+      width: 150px;
     }
 
   }
