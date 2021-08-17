@@ -14,6 +14,9 @@ function App() {
   const [PasswordError, setPasswordError] = useState(''); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
   const [hasAccount, setHasAccount] = useState(false); //Función que crea internamente una variable donde podremos almacenar el estado de nuestro componente
 
+
+
+
   const clearInputs = () => { // Borrar las entradas 
     setEmail(''); // IMPORTANTE: cuando llamamos a la función set de un useState(), se sobrescribe el contenido de la variable.
     setPassword('');

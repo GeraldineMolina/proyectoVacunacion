@@ -8,6 +8,8 @@ export default function nada(){
     
 }
 
+
+/* Metodo para insertar pacientes en firebase */
 export const insertarPaciente = (id, nombre, sintomatologia, dosis, laboratorio)=>{
     if(id!=="" && nombre!=="" && sintomatologia!=="" && dosis!=="" && laboratorio!==""){
         fire.database().ref("Pacientes/"+id).set({
@@ -21,5 +23,6 @@ export const insertarPaciente = (id, nombre, sintomatologia, dosis, laboratorio)
         alert("Ingrese la informacion completa por favor");
     }
 }
+ 
 
 
